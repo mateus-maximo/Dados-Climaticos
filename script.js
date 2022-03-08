@@ -1,7 +1,19 @@
-document.querySelector('.busca').addEventListener('submit', async (event) => {
+//Selectors
+let busca = document.querySelector('.busca');
+let searchInput = document.querySelector('#searchInput');
+let resultado = document.querySelector('.resultado');
+let titulo = document.querySelector('.titulo');
+let tempInfo = document.querySelector('.tempInfo');
+let ventoInfo = document.querySelector('.ventoInfo');
+let tempImg = document.querySelector('.temp img');
+let ventoPonto = document.querySelector('.ventoPonto');
+let aviso = document.querySelector('.aviso');
+
+//Listeners
+busca.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  let input = document.querySelector('#searchInput').value;
+  let input = searchInput.value;
   
   if(input !== ''){
     clearInfo();
@@ -25,33 +37,30 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
       clearInfo();
       showWarning('Não encontramos esta localização.');
     }
-
-    console.log(json);
-  } else {
-    clearInfo();
-  }
-
+  } else clearInfo();
 })
 
+//Functions
 function clearInfo(){
   showWarning('');
-  document.querySelector('.resultado').style.display = 'none';
+  resultado.style.display = 'none';
 }
 
 function showInfo(json){
   showWarning('');
   
-  document.querySelector('.titulo').innerHTML = `${json.name}, ${json.country}`;
-  document.querySelector('.tempInfo').innerHTML = `${json.temp} <sup>°C</sup>`;
-  document.querySelector('.ventoInfo').innerHTML = `${json.windSpeed} <span>km/h</span>`
+  titulo.innerHTML = `${json.name}, ${json.country}`;
+  tempInfo.innerHTML = `${json.temp} <sup>°C</sup>`;
+  ventoInfo.innerHTML = `${json.windSpeed} <span>km/h</span>`
 
-  document.querySelector('.temp img').setAttribute('src', `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
+  tempImg.setAttribute('src', `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
 
-  document.querySelector('.ventoPonto').style.transform = `rotate(${json.windAngle - 90}deg)`;
+  ventoPonto.style.transform = `rotate(${json.windAngle - 90}deg)`;
 
-  document.querySelector('.resultado').style.display = 'block';
+  resultado.style.display = 'block';
 }
 
 function showWarning(msg) {
-  document.querySelector('.aviso').innerHTML = msg;
+  aviso.innerHTML = msg;
+  aviso.style.display = 'block';
 }
