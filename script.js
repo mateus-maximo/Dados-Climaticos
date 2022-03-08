@@ -4,8 +4,10 @@ let searchInput = document.querySelector('#searchInput');
 let resultado = document.querySelector('.resultado');
 let titulo = document.querySelector('.titulo');
 let tempInfo = document.querySelector('.tempInfo');
-let ventoInfo = document.querySelector('.ventoInfo');
-let tempImg = document.querySelector('.temp img');
+let ventoInfo = document.querySelector('.information.vento .informationInfo');
+let umidadeInfo = document.querySelector('.information.umidade .informationInfo');
+let chuvaInfo = document.querySelector('.information.chuva .informationInfo');
+let tempImg = document.querySelector('.result-first--content img');
 let ventoPonto = document.querySelector('.ventoPonto');
 let aviso = document.querySelector('.aviso');
 
@@ -31,7 +33,8 @@ busca.addEventListener('submit', async (event) => {
         temp: json.main.temp,
         tempIcon: json.weather[0].icon,
         windSpeed: json.wind.speed,
-        windAngle: json.wind.deg
+        humidity: json.main.humidity,
+        pressure: json.main.pressure
       })
     } else {
       clearInfo();
@@ -50,12 +53,12 @@ function showInfo(json){
   showWarning('');
   
   titulo.innerHTML = `${json.name}, ${json.country}`;
-  tempInfo.innerHTML = `${json.temp} <sup>°C</sup>`;
-  ventoInfo.innerHTML = `${json.windSpeed} <span>km/h</span>`
+  tempInfo.innerHTML = `${parseInt(json.temp)} <sup>°C</sup>`;
+  ventoInfo.innerHTML = `${json.windSpeed} <span>km/h</span> |`
+  umidadeInfo.innerHTML = `${json.humidity} <span>%</span> |`
+  chuvaInfo.innerHTML = `${json.pressure} <span>hPa</span>`
 
   tempImg.setAttribute('src', `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
-
-  ventoPonto.style.transform = `rotate(${json.windAngle - 90}deg)`;
 
   resultado.style.display = 'block';
 }
