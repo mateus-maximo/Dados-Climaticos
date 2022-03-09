@@ -10,6 +10,9 @@ let chuvaInfo = document.querySelector('.information.chuva .informationInfo');
 let tempImg = document.querySelector('.result-first--content img');
 let ventoPonto = document.querySelector('.ventoPonto');
 let aviso = document.querySelector('.aviso');
+let diaAno = document.querySelector('.dia-ano');
+let diaSemana = document.querySelector('.dia-semana');
+let hora = document.querySelector('.hora');
 
 //Listeners
 busca.addEventListener('submit', async (event) => {
@@ -59,6 +62,8 @@ function showInfo(json){
   chuvaInfo.innerHTML = `${json.pressure} <span>hPa</span>`
 
   tempImg.setAttribute('src', `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
+  
+  showHour();
 
   resultado.style.display = 'block';
 }
@@ -66,4 +71,25 @@ function showInfo(json){
 function showWarning(msg) {
   aviso.innerHTML = msg;
   aviso.style.display = 'block';
+}
+
+function showHour() {
+  let date = new Date();
+  diaAno.innerHTML = date.toLocaleDateString();
+  diaSemana.innerHTML = getDiaSemana(date.getDay());
+  hora.innerHTML = date.getHours() + ':' + date.getMinutes();
+}
+
+function getDiaSemana(dia) {
+  let diaSemana = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado"
+  ]
+ 
+  return diaSemana[dia];
 }
