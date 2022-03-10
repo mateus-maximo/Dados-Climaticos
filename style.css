@@ -6,23 +6,49 @@
 
 body {
   font-family: 'Inter', sans-serif;
+}
+
+section {
+  position: relative;
+  background-image: url('/images/beautiful-cityscape-of-an-urban-city-shot-from-above.jpg');
+  background-attachment: fixed;
+  height: 100vh;
   display: flex;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #FFD4F0;
+  background-position: center;
+  background-size: cover;
+}
+
+#content {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  border-radius: 20px;
 }
 
 h1 {
+  width: 90%;
   font-weight: 100;
   color: #FFF;
-  margin: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#search {
+  width: 80%;
 }
 
 .busca {
   display: flex;
-  width: 300px;
+  width: 100%;
 }
 
 .busca #searchInput {
@@ -30,7 +56,7 @@ h1 {
   padding: 10px;
   outline: none;
   font-size: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 0;
 }
 
@@ -38,25 +64,15 @@ h1 {
   padding: 10px;
   font-size: 15px;
   border: 0;
-  background-color: #555;
+  background-color: #949AE2;
   color: #FFF;
-  border-radius: 5px;
+  border-radius: 50%;
   margin-left: 10px;
   cursor: pointer;
 }
+
 .busca button:hover {
   background-color: #444;
-}
-
-#content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 800px;
-  height: 500px;
-  background-color: #d7a2c6;
-  background-image: linear-gradient(90deg, #d7a2c6 0%, #bc8ebd 55%, #a980b7 100%);
-  border-radius: 20px;
 }
 
 #search {
@@ -65,17 +81,10 @@ h1 {
 
 .resultado {
   display: none;
-  margin-top: 20px;
+  margin-top: 5px;
+  padding-left: 50px;
   width: 100%;
   height: 400px;
-}
-
-#result-left {
-  display: flex;
-  width: 550px;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
 }
 
 .result-first--content {
@@ -84,7 +93,7 @@ h1 {
 }
 
 .result-first--content img {
-  margin-left: -20px;
+  margin-left: -25px;
 }
 
 .titulo {
@@ -98,7 +107,9 @@ h1 {
   font-size: 50px;
   font-weight: 100;
 }
+
 .tempInfo sup {
+  margin-left: -10px;
   font-size: 15px;
   font-weight: normal;
 }
@@ -110,7 +121,7 @@ h1 {
 .information {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .information i {
@@ -147,7 +158,7 @@ h1 {
   color: #FFF;
   font-size: 25px;
   font-weight: 400;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .date {
@@ -170,4 +181,16 @@ h1 {
 
 .hora {
   margin-left: 10px;
+}
+
+.designed {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.designed:hover {
+  text-decoration: underline;
 }
