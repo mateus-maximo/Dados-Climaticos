@@ -22,14 +22,14 @@ section {
 }
 
 #content {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+  box-shadow: 0 30px 30px rgba(0, 0, 0, .5);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 600px;
   height: 400px;
   background-color: transparent;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   border-radius: 20px;
 }
 
