@@ -10,7 +10,7 @@ body {
 
 section {
   position: relative;
-  background-image: url('/images/beautiful-cityscape-of-an-urban-city-shot-from-above.jpg');
+  background-image: url('/images/bg.jpg');
   background-attachment: fixed;
   height: 100vh;
   display: flex;
@@ -29,11 +29,16 @@ section {
   width: 600px;
   height: 400px;
   background-color: transparent;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   border-radius: 20px;
 }
 
-h1 {
+#search {
+  width: 80%;
+  margin: auto;
+}
+
+#search h1 {
   width: 90%;
   font-weight: 100;
   color: #FFF;
@@ -42,16 +47,12 @@ h1 {
   text-align: center;
 }
 
-#search {
-  width: 80%;
-}
-
-.busca {
+#search-form {
   display: flex;
   width: 100%;
 }
 
-.busca #searchInput {
+#search-input {
   flex: 1;
   padding: 10px;
   outline: none;
@@ -60,7 +61,7 @@ h1 {
   border: 0;
 }
 
-.busca button {
+#search-form button {
   padding: 10px;
   font-size: 15px;
   border: 0;
@@ -71,15 +72,11 @@ h1 {
   cursor: pointer;
 }
 
-.busca button:hover {
+#search-form button:hover {
   background-color: #444;
 }
 
-#search {
-  margin: auto;
-}
-
-.resultado {
+#result {
   display: none;
   margin-top: 5px;
   padding-left: 50px;
@@ -87,34 +84,34 @@ h1 {
   height: 400px;
 }
 
-.result-first--content {
+#result-first--content {
   display: flex;
   align-items: center;
 }
 
-.result-first--content img {
+#result-first--content img {
   margin-left: -25px;
 }
 
-.titulo {
+#title {
   color: #FFF;
   font-size: 25px;
   font-weight: bold;
 }
 
-.tempInfo{
+#tempInfo{
   color: #FFF;
   font-size: 50px;
   font-weight: 100;
 }
 
-.tempInfo sup {
+#tempInfo sup {
   margin-left: -10px;
   font-size: 15px;
   font-weight: normal;
 }
 
-.another-informations {
+#another-informations {
   display: flex;
 }
 
@@ -141,11 +138,11 @@ h1 {
   padding-right: 5px;
 }
 
-.information.vento i {
+.information.wind i {
   margin-right: 5px;
 }
 
-.information.vento .informationTitle {
+.information.wind .informationTitle {
   padding-left: 0;
 }
 
@@ -153,7 +150,7 @@ h1 {
   color: #fff;
 }
 
-.aviso {
+#warning {
   display: none;
   color: #FFF;
   font-size: 25px;
@@ -161,7 +158,7 @@ h1 {
   margin-bottom: 50px;
 }
 
-.date {
+#date {
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -170,20 +167,20 @@ h1 {
   font-weight: 100;
 }
 
-.dia-hora-semana {
+#separate-date {
   display: flex;
   margin-top: 10px;
 }
 
-.dia-semana {
+#day-week {
   margin-right: 10px;
 }
 
-.hora {
+#hour {
   margin-left: 10px;
 }
 
-.designed {
+#designed {
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -191,6 +188,6 @@ h1 {
   color: #fff;
 }
 
-.designed:hover {
+#designed:hover {
   text-decoration: underline;
 }
