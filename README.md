@@ -11,9 +11,7 @@
 </p>
 <br>
 
-<h1 align="center">
-  <img src="./github/DadosClimaticos.gif" alt="GIF do Readme">
-</h1>
+![DadosClimaticos](https://user-images.githubusercontent.com/51799470/158071705-9ff0deb0-44a9-4eae-a760-c3364a7d6b04.gif)
 
 ## Tecnologias
 - [HTML](https://html.com/)
