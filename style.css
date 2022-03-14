@@ -10,7 +10,7 @@ body {
 
 section {
   position: relative;
-  background-image: url('/images/bg.jpg');
+  background-image: url('./images/bg.jpg');
   background-attachment: fixed;
   height: 100vh;
   display: flex;
